@@ -1,5 +1,7 @@
+import About from "./component/About";
+
 function App() {
-  return <></>;
+  return <About></About>;
 }
 
 export default App;
