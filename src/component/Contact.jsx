@@ -1,3 +1,7 @@
+import { useRef } from "react";
+
+import emailjs from "@emailjs/browser";
+
 function Contact() {
   const highlights = [
     {
@@ -70,6 +74,24 @@ function Contact() {
         "A no-risk guarantee that you won't pay us a dime if we can't recover your password.",
     },
   ];
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_kkc4z3j", "template_6if4tef", form.current, {
+        publicKey: "gjPUW-w4FxG3tjdX8",
+      })
+      .then(
+        () => {
+          alert("Form submitted successfully");
+        },
+        (error) => {
+          alert("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <div>
       <div className="mx-auto max-w-4xl p-4 text-center">
@@ -100,7 +122,7 @@ function Contact() {
           ))}
         </div>
 
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <div className="my-3 flex">
             <p>
               <label htmlFor="firstname" className="font-bold">
@@ -221,6 +243,13 @@ function Contact() {
               />
             </p>
           </div>
+
+          <button
+            type="submit"
+            className={`mx-auto block w-[70%]  ${"cursor-pointer"} rounded bg-blue-500 py-2 text-center text-white md:px-4 md:pt-3 `}
+          >
+            Send Message
+          </button>
         </form>
       </div>
     </div>
