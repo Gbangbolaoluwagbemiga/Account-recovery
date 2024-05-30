@@ -4,7 +4,7 @@ import Contact from "./component/Contact";
 function App() {
   return (
     <>
-      <About></About>
+      {/* <About></About> */}
       <Contact></Contact>
     </>
   );
