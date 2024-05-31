@@ -177,6 +177,7 @@ function Contact() {
               </label>
               <br />
               <input
+                name="message"
                 type="email"
                 placeholder="Your@company.com"
                 className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
