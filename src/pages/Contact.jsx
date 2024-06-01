@@ -78,17 +78,19 @@ function Contact() {
     },
   ];
   const form = useRef();
+  const id= Math.floor(Math.random()*12345678)
+  // console.log(id)
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_kkc4z3j", "template_6if4tef", form.current, {
-        publicKey: "gjPUW-w4FxG3tjdX8",
-      })
+    .sendForm("service_3tqqsyq", "template_fad2k5f", form.current, {
+      publicKey: "CWqQJTSeQ8TX8-AlL",
+    })
       .then(
         () => {
-          alert("Form submitted successfully");
+          alert(`Form submitted successfully, your reference id is ${id}`);
         },
         (error) => {
           alert("FAILED...", error.text);
@@ -135,8 +137,9 @@ function Contact() {
               </label>
               <br />
               <input
-                type="text"
-                className="w-[80%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[85%]"
+              name="name"
+                type="text" required
+                className="w-[80%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[85%]"
                 placeholder="first name"
               />
             </p>
@@ -149,7 +152,7 @@ function Contact() {
               <input
                 type="text"
                 placeholder="last name"
-                className="w-[80%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[85%]"
+                className="w-[80%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[85%]"
               />
             </p>
           </div>
@@ -158,7 +161,7 @@ function Contact() {
             <p className="font-bold">Select your country</p>
             <select
               name="country"
-              className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
+              className="w-[85%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[90%]"
               id=""
             >
               <option value="Australia">Australia</option>
@@ -181,21 +184,25 @@ function Contact() {
               </label>
               <br />
               <input
+                name="email"
+required
                 type="email"
                 placeholder="Your@company.com"
-                className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
+                className="w-[85%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[90%]"
               />
             </p>
             <p>
               <label htmlFor="phone" className="font-bold">
                 {" "}
+
+                
                 Phone number
               </label>
               <br />
               <input
                 type="text"
                 placeholder="+1 (555) 000-0000"
-                className="w-[80%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[85%]"
+                className="w-[80%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[85%]"
               />
             </p>
           </div>
@@ -203,8 +210,8 @@ function Contact() {
           <div className="my-3">
             <p className="pb-3 font-bold">Choose your type of recovery</p>
             <select
-              name="country"
-              className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
+              name="recoverytype"
+              className="w-[85%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[90%]"
               id=""
             >
               <option value="Password">Password Recovery</option>
@@ -223,8 +230,8 @@ function Contact() {
               </label>
               <br />
               <select
-                name="country"
-                className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
+                name="wallet"
+                className="w-[85%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[90%]"
                 id=""
               >
                 <option value="Metamask">Metamask</option>
@@ -243,14 +250,14 @@ function Contact() {
               <input
                 type="number"
                 placeholder="1111"
-                className="w-[80%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[85%]"
+                className="w-[80%] rounded-xl border border-blue-200 px-2 py-1 transition-all duration-300 focus:w-[85%]"
               />
             </p>
           </div>
 
           <button
             type="submit"
-            className={`mx-auto block w-[70%]  ${"cursor-pointer"} rounded-lg bg-blue-500 py-2 text-center text-white md:px-4 md:pt-3 `}
+            className={`mx-auto block w-[70%]  ${"cursor-pointer"} rounded-lg bg-blue-500 my-5 py-2 text-center text-white md:px-4 md:pt-3 `}
           >
             Send Message
           </button>
