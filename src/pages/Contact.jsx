@@ -1,6 +1,9 @@
-import { useRef } from "react";
+import { FiMessageCircle } from "react-icons/fi";
+import { IoIosContacts } from "react-icons/io";
+import { FaFileInvoice } from "react-icons/fa";
 
 import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 function Contact() {
   const highlights = [
@@ -92,9 +95,10 @@ function Contact() {
         }
       );
   };
+
   return (
     <div>
-      {/* <div className="mx-auto max-w-4xl p-4 text-center">
+      <div className="mx-auto max-w-4xl p-4 text-center text-gray-600">
         <div className="mb-4 text-lg text-blue-600">Contact Us</div>
         <h2 className="mb-4 text-3xl font-bold">Talk to our support team</h2>
         <div className="mb-4"></div>
@@ -102,15 +106,15 @@ function Contact() {
           Contact us to recover the password or seed phrase to your locked
           crypto wallet. Our friendly team would love to hear from you.
         </p>
-      </div> */}
+      </div>
 
-      <div className="hidden justify-center gap-12 p-4 md:hidden">
-        <div className="">
+      <div className="block gap-4 md:flex">
+        <div className="w-layout-grid uui-layout18_item-list text-gray-600">
           {highlights.map((highlight) => (
             <div key={highlight.id} className="p-4">
               <div className="flex gap-4">
-                <div className="  h-10 w-10 rounded-full border bg-[#026ffa] text-[#ebf2f] ">
-                  <div className="mx-auto ps-2 pt-2">{highlight.icon}</div>
+                <div className="  flex items-center justify-center p-4 rounded-full border bg-[#026ffa] text-[#ebf2f] ">
+                  <div className=" text-white">{highlight.icon}</div>
                 </div>
                 <div className="uui-layout18_item-text-wrapper">
                   <h3 className="uui-heading-xsmall-3">{highlight.title}</h3>
@@ -122,7 +126,7 @@ function Contact() {
           ))}
         </div>
 
-        <form ref={form} onSubmit={sendEmail}>
+        <form className="text-gray-600 ms-5" ref={form} onSubmit={sendEmail}>
           <div className="my-3 flex">
             <p>
               <label htmlFor="firstname" className="font-bold">
@@ -177,7 +181,6 @@ function Contact() {
               </label>
               <br />
               <input
-                name="message"
                 type="email"
                 placeholder="Your@company.com"
                 className="w-[85%] rounded-xl border border-blue-200 px-2 transition-all duration-300 focus:w-[90%]"
@@ -247,7 +250,7 @@ function Contact() {
 
           <button
             type="submit"
-            className={`mx-auto block w-[70%]  ${"cursor-pointer"} rounded bg-blue-500 py-2 text-center text-white md:px-4 md:pt-3 `}
+            className={`mx-auto block w-[70%]  ${"cursor-pointer"} rounded-lg bg-blue-500 py-2 text-center text-white md:px-4 md:pt-3 `}
           >
             Send Message
           </button>
