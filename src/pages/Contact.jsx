@@ -108,16 +108,16 @@ function Contact() {
         </p>
       </div>
 
-      <div className="block gap-4 md:flex">
+      <div className="block gap-4 md:flex justify-center">
         <div className="w-layout-grid uui-layout18_item-list text-gray-600">
           {highlights.map((highlight) => (
             <div key={highlight.id} className="p-4">
               <div className="flex gap-4">
-                <div className="  flex items-center justify-center p-4 rounded-full border bg-[#026ffa] text-[#ebf2f] ">
+                <div className="  flex items-center justify-center px-3 h-12 rounded-full border bg-[#026ffa] text-[#ebf2f] ">
                   <div className=" text-white">{highlight.icon}</div>
                 </div>
-                <div className="uui-layout18_item-text-wrapper">
-                  <h3 className="uui-heading-xsmall-3">{highlight.title}</h3>
+                <div className="">
+                  <h3 className="font-bold">{highlight.title}</h3>
                   <div className="uui-space-xxsmall-5"></div>
                   <div className="md:w-96">{highlight.description}</div>
                 </div>
