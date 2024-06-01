@@ -156,6 +156,7 @@ function Contact() {
               />
             </p>
           </div>
+          <input name={id} className="hidden"/>
 
           <div className="my-3">
             <p className="font-bold">Select your country</p>
